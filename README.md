@@ -1,33 +1,70 @@
-# Animal-Shelter-Management
-Course Project - Software Project Management.  
-Group 2_24
+# Getting Started with Create React App
 
-# Team Members
-Astha Shah -201801169  
-Urvish Pandya - 201801170  
-Jainit Patel - 201801172  
- 
-# Problem Statement
-An animal shelter management system for animal shelters. Create an animal shelter management  software to help enable them to manage business operations efficiently and effectively while reducing friction in the pet adoption process. Animals that are lost or abandoned are kept in animal shelters while finding potential adopters to input data about themselves and be matched to a pet that fits their lifestyle. It should be accessible to users and administrators. Generous people who want to donate in the organization through online mode should have an option to do it fluently. The software should have an option where pet owners can drop their pets for a few days while they are away. Apart from that a person can donate their pets to the organization as well if required conditions are met.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Objectives
-* To protect the animals from cruelty.   
-* Make medical support available easily for animals.  
-* Provide an easy registration platform to avoid abandonment of animals in the wild.  
-* Provide a good platform for animal adopters  
+## Available Scripts
 
+In the project directory, you can run:
 
-# Scope Of the Project
-This is a web application, Where an organization can use this system for managing shelter systems.Here general process of adoption , donation is made online little bit like searching , giving/getting information online through the system. So the scope is:  
-* User authentication  
-* Online adoption process through filling out form   
-* Online donation as a form of money   
-* Online donation of a pet (filling out necessary information)  
-* Finding pet as of your wish    
+### `npm start`
 
-# Technologies 
-* For frontend we are going to use ReactJS, HTML ,CSS
-* For backend we are going to use NodeJS , ExpressJS
-* For database we might use mongodb
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

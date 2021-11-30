@@ -1,0 +1,289 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ------------------------SignUp-------------- */
+
+.signup-Wrapper{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.signup{
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.home-img-wrapper{
+  margin-top: auto;
+  margin-bottom: auto;
+  
+}
+
+.home-img{
+  height:350px;
+  width: auto;
+}
+
+.signup-btn{
+  margin: 5%
+}
+
+
+/* --------------------Searchbar--------- */
+
+.searchbar-wrapper{
+  background-color: #145C9D;
+  padding:10px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  height: 80px;
+}
+
+.logo-bar{
+  display: flex;
+  margin-left: 50px;
+  justify-self: flex-start;
+  height: 60px;
+  width: auto;
+}
+.btn-signout-wrapper{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-signout{
+  width: 200px
+}
+
+/* ---------------------Search -------------------*/
+
+.searchbox{
+    outline: 0;
+    border-width: 0 0 2px;
+    border-bottom-color: white;
+    background-color: #145C9D;
+    color: white;
+    font-weight: lighter;
+    height: 60px
+}
+
+.searchbox::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  font-weight: lighter;
+  opacity: 1; /* Firefox */
+}
+
+/* ---------------Pet------------ */
+
+
+
+.pet-wrapper{
+  margin: 10px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 22% 88%;
+  background-color: #F4EEB1;
+}
+
+
+.pet-img{
+  height: 100%;
+  width: 100%;
+}
+
+.place-center{
+  display: flex;
+  word-break: normal;
+  text-align: left;
+}
+
+.details-wrapper{
+  padding: 10px;
+  padding-left: 70px;
+  width: 88%
+}
+
+.inner-grid{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+/* ----------------Home------------- */
+.links-home{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link-home{
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 50px;
+}
+
+.menubar-wrapper{
+  background-color: #DB7A7A;
+  padding: 10px;
+}
+
+.logo-home{
+  float: left;
+  margin-left: 50px;
+  justify-self: flex-start;
+  height: 55px;
+  width: auto;
+}
+
+.home-middle-wrapper{
+  display: grid;
+  grid-template-columns: 76% 30%;
+  height: 12%;
+}
+
+.home-middle-img{
+  width: 80%;
+  padding-top: 10px
+}
+
+.slogans{
+  background-color: #145C9D;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.slogan1-wrapper{
+  grid-template-columns: 20% 60% 20%;
+  height: 100%;
+}
+
+.slogan1{
+  color: white;
+  font-weight: 700;
+  font-size: x-large;
+  transform: translateY(20%); 
+}
+
+.slogan2{
+  color:#F4EEB1;
+  font-weight: 700;
+  font-size: x-large;
+  transform: translateY(30%); 
+}
+
+.home-bottom-img-wrapper{
+  display: grid;
+  
+  width: 100vw;
+  grid-template-columns: 33% 33% 34%;
+  height: 30%;
+}
+
+.bottom-img{
+  object-fit: fill;
+  height: 30vh;
+  width: 100%;
+}
+
+.location-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 100%;
+  background-color: #93E89B;
+  
+}
+
+.location{
+  padding: 2%;
+}
+
+
+/* ------------------Adoption form ------- */
+.adoption-bar-wrapper{
+  background-color: #145C9D;
+  padding:10px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  height: 80px;
+}
+
+.logo-bar{
+  display: flex;
+  margin-left: 50px;
+  justify-self: flex-start;
+  height: 60px;
+  width: auto;
+}
+
+.bar-form-text{
+  color: white;
+  font-weight: 500;
+  padding-top: 10px;
+  font-size: large;
+}
+
+.btn-signout-wrapper{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-signout{
+  width: 200px
+}
+
+.link-signout{
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+/* ------------- Form  ------------*/
+
+
+.adoption-form{
+  margin: 20px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
