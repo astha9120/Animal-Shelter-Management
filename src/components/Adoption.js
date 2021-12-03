@@ -11,19 +11,26 @@ const Adoption = ({userName}) =>{
         weight: -1,
         age: 89,
         info: "",
-        meeting: "",
         username: userName,
     }
     const [obj, setObj] = useState(temp)
+    const [meeting, setMeeting] = useState()
 
-    const handleSubmit = () =>{
+    const handleSubmit = (e) =>{
+      e.preventDefault()
+      var tempDate = new Date(meeting)
+      console.log(tempDate)
+      setObj({...obj, meeting: tempDate})
 
+ 
     }
     
     return(
         <div className='adoption-form wrapper'>
 
-        <Form>
+        <Form onSubmit={(e) => {
+              handleSubmit(e)
+            }}>
           <Row>
             <Col>
         <FloatingLabel
@@ -106,9 +113,7 @@ const Adoption = ({userName}) =>{
           >
             <Form.Control
               type="date"
-              placeholder=""
-              onChange={(e) => setObj({...obj,
-                                meeting: e.target.value})}
+              onChange={(e) => setMeeting(e.target.value)}
               required="true"
             />
           </FloatingLabel>
@@ -123,8 +128,7 @@ const Adoption = ({userName}) =>{
               type="text"
               placeholder=""
               onChange={(e) => setObj({...obj,
-                                type: e.target.value})}
-              required="true"
+                                info: e.target.value})}
             />
           </FloatingLabel>
 
@@ -133,9 +137,6 @@ const Adoption = ({userName}) =>{
             className="signup-btn"
             variant="primary"
             type="submit"
-            onClick={() => {
-              handleSubmit()
-            }}
           >
             Submit
           </Button>

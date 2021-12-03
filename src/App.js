@@ -33,13 +33,13 @@ function App({emailId}) {
         </Route>
 
         <Route exact path="/signin">
-          {/* {emailId == "" ? <Home /> : <SignIn />} */}
-          <SignIn />
+          {emailId !== "" ? <MainPage /> : <SignIn />}
+          {/* <SignIn /> */}
         </Route>  
 
         <Route exact path="/signup">
-          {/* {emailId == "" ? <Home /> : <SignUp />} */}
-          <SignUp />
+          {emailId !== "" ? <MainPage /> : <SignUp />}
+          {/* <SignUp /> */}
         </Route>
 
         <Route exact path="/main">

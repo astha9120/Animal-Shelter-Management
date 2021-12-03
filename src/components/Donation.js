@@ -15,15 +15,21 @@ const Donation = ({userName}) =>{
         username: userName,
     }
     const [obj, setObj] = useState(temp)
-
-    const handleSubmit = () =>{
+    const [meeting, setMeeting] = useState()
+    
+    const handleSubmit = (e) =>{
+      e.preventDefault()
+      var tempDate = new Date(meeting)
+      console.log(tempDate)
+      setObj({...obj, meeting: tempDate})
 
     }
-    
     return(
         <div className='adoption-form wrapper'>
 
-        <Form>
+        <Form onSubmit={(e) => {
+              handleSubmit(e)
+            }}>
           <Row>
             <Col>
         <FloatingLabel
@@ -107,8 +113,7 @@ const Donation = ({userName}) =>{
             <Form.Control
               type="date"
               placeholder=""
-              onChange={(e) => setObj({...obj,
-                                meeting: e.target.value})}
+              onChange={(e) => setMeeting(e.target.value)}
               required="true"
             />
           </FloatingLabel>
@@ -124,7 +129,6 @@ const Donation = ({userName}) =>{
               placeholder=""
               onChange={(e) => setObj({...obj,
                                 type: e.target.value})}
-              required="true"
             />
           </FloatingLabel>
 
@@ -133,9 +137,6 @@ const Donation = ({userName}) =>{
             className="signup-btn"
             variant="primary"
             type="submit"
-            onClick={() => {
-              handleSubmit()
-            }}
           >
             Submit
           </Button>
