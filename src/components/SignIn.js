@@ -1,5 +1,6 @@
 import { Button, Form, FloatingLabel } from "react-bootstrap";
 import React from "react";
+import axios from 'axios';
 import HomeImg from "../Images/home-img.jpeg";
 
 import { Link } from "react-router-dom";
@@ -29,6 +30,19 @@ const SignIn = () => {
     // store returned user here
 
     
+  }
+
+  const handleSubmit_form = async(e)=>{
+    e.preventDefault();
+    const config = { headers: { 'Content-Type': 'application/json' } }
+    console.log(emailId,password)
+        const res =await axios.post(`http://localhost:4000/login/in/`,{email:emailId,password:password},config)
+        .then((e)=>{
+          console.log(e)
+        }).catch((err)=>{
+          console.log(err)
+        })
+        
   }
 
 
@@ -64,9 +78,7 @@ const SignIn = () => {
             className="signup-btn"
             variant="primary"
             type="submit"
-            onClick={() => {
-              //   Add Click Event Here
-            }}
+            onClick={handleSubmit_form} 
           >
             Sign In
           </Button>

@@ -1,4 +1,5 @@
 import { Button, Form, FloatingLabel, Row, Col } from "react-bootstrap";
+import axios from 'axios';
 import React from "react";
 import HomeImg from "../Images/home-img.jpeg";
 import { Link } from "react-router-dom";
@@ -17,10 +18,20 @@ const SignUp = () => {
   const [line1, setLine1] = React.useState();
   const [line2, setLine2] = React.useState();
   const [city, setCity] = React.useState();
-  const [username, setUsername] = React.useState();
+  
+  
 
-  const handleLogin = () => {
-    console.log("Handle");
+  const handleLogin = async(e) => {
+    e.preventDefault();
+    const config = { headers: { 'Content-Type': 'application/json' } }
+    console.log(name,emailId,password,phone,line1,line2,city,state,country,zip)
+        const res =await axios.post(`http://localhost:4000/login/up/`,{name:name,email:emailId,password:password,address:line1+line2+city+state+country+zip,contact:phone},config)
+        .then((e)=>{
+          console.log(e)
+        }).catch((err)=>{
+          console.log(err)
+        })
+        
 
   };
   return (
@@ -54,19 +65,6 @@ const SignUp = () => {
             />
           </FloatingLabel>
 
-          <FloatingLabel
-            controlId="floatingInput"
-            label="Username"
-            className="mb-3"
-          >
-            <Form.Control
-              type="text"
-              placeholder="Full Name"
-              onChange={(e) => setName(e.target.value)}
-              required="true"
-            />
-          </FloatingLabel>
-
           <FloatingLabel controlId="floatingPassword" label="Password">
             <Form.Control
               type="password"
@@ -74,6 +72,20 @@ const SignUp = () => {
               onChange={(e) => setPassword(e.target.value)}
               required="true"
             />
+
+            <FloatingLabel
+            controlId="floatingInput"
+            label="phone"
+            className="mb-3"
+          >
+            <Form.Control
+              type="text"
+              placeholder="phone"
+              onChange={(e) => setPhone(e.target.value)}
+              required="true"
+            />
+          </FloatingLabel>
+
           </FloatingLabel>
           <br />
           {/* Information */}
@@ -169,10 +181,7 @@ const SignUp = () => {
             className="signup-btn"
             variant="primary"
             type="submit"
-            onClick={() => {
-              handleLogin()
-            }}
-          >
+            onClick={handleLogin} >
             Sign Up
           </Button>
         </Form>

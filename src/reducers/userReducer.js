@@ -2,7 +2,7 @@ import { SET_STATE } from "./Actions/userActions";
 
 const initialState = {
   name: "Jainit",
-  emailId: "S<MND",
+  emailId: "",
   password: "asdfgh",
   username: "kjkjakm",
   phone: 865464654,

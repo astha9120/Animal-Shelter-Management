@@ -1,6 +1,8 @@
 
 import './App.css';
 import {Home, SignIn, SignUp, MainPage, AdoptionForm, DonationForm, Events} from "./pages";
+// import Postevent from './components/Postevent'
+// import Postpet from './components/postpet'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {connect} from 'react-redux'
@@ -55,6 +57,8 @@ function App({emailId}) {
         <Route exact path="*">
           {emailId === "" ? <Home /> : <MainPage />}
         </Route>
+        {/* <Route path="/eventpost" component={Postevent} exact={true}/>
+        <Route path="/petpost" component={Postpet} exact={true}/> */}
       </Switch>
     </Router>    
   </div>
