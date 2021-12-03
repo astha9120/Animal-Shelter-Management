@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react"
 import { Button, Form, FloatingLabel,Row,Col } from "react-bootstrap";
 import {connect} from 'react-redux'
+import axios from 'axios';
 
-const Donation = ({userName}) =>{
+const Donation = ({emailId}) =>{
 
     var temp = {
         type: "",
@@ -10,18 +11,27 @@ const Donation = ({userName}) =>{
         color: "",
         weight: -1,
         age: 89,
-        info: "",
-        meeting: "",
-        username: userName,
+        description: "",
+        time: "",
+        email: "123@gmail.com",
     }
     const [obj, setObj] = useState(temp)
-    const [meeting, setMeeting] = useState()
+    //const [meeting, setMeeting] = useState()
     
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
       e.preventDefault()
-      var tempDate = new Date(meeting)
-      console.log(tempDate)
-      setObj({...obj, meeting: tempDate})
+      // var tempDate = new Date(meeting)
+      // console.log(tempDate)
+     // setObj({...obj, time: meeting})
+      console.log(obj)
+      const config = { headers: { 'Content-Type': 'application/json' } }
+        const res =await axios.post(`http://localhost:4000/donation_pet`,obj,config)
+        .then((e)=>{
+          console.log(e)
+        }).catch((err)=>{
+          console.log(err)
+        })
+ 
 
     }
     return(
@@ -113,7 +123,7 @@ const Donation = ({userName}) =>{
             <Form.Control
               type="date"
               placeholder=""
-              onChange={(e) => setMeeting(e.target.value)}
+              onChange={(e) => setObj({...obj,time:e.target.value})}
               required="true"
             />
           </FloatingLabel>

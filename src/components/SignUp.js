@@ -70,17 +70,7 @@ const SignUp = () => {
               required="true"
             />
 
-            <FloatingLabel
-            controlId="floatingInput"
-            label="phone"
-            className="mb-3"
-          >
-            <Form.Control
-              type="text"
-              placeholder="phone"
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </FloatingLabel>
+            
 
           </FloatingLabel>
           <br />
