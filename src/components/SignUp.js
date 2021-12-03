@@ -19,15 +19,17 @@ const SignUp = () => {
   const [city, setCity] = React.useState();
   const [username, setUsername] = React.useState();
 
-  const handleLogin = () => {
-    console.log("Handle");
-
+  
+  const handleLogin = (e) => {
+    e.preventDefault()
+    const obj = {emailId, name, password, phone, country, zip, state, line1,line2, city, username}  
+    console.log(obj)
   };
   return (
     <div className="signup-Wrapper">
       <div className="signup">
         <h1>Sign Up</h1>
-        <Form>
+        <Form onSubmit={e=>handleLogin(e)}>
           <FloatingLabel
             controlId="floatingInput"
             label="Email address"
@@ -62,7 +64,7 @@ const SignUp = () => {
             <Form.Control
               type="text"
               placeholder="Full Name"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
               required="true"
             />
           </FloatingLabel>
@@ -163,15 +165,24 @@ const SignUp = () => {
             </Col>
 
           </Row>
-
+          <FloatingLabel
+                controlId="floatingInput"
+                label="Phone number"
+                className="mb-3"
+                as={Col}
+              >
+                <Form.Control
+                  type="number"
+                  placeholder="City"
+                  onChange={(e) => setPhone(e.target.value)}
+                  required="true"
+                />
+              </FloatingLabel>
 
           <Button
             className="signup-btn"
             variant="primary"
             type="submit"
-            onClick={() => {
-              handleLogin()
-            }}
           >
             Sign Up
           </Button>

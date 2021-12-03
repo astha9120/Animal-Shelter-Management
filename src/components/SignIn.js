@@ -12,24 +12,31 @@ const SignIn = () => {
   const [password, setPassword] = React.useState();
 
 // To send request to backend for Login
-  const handleLogin = async googleData => {
-    const res = await fetch("/api/v1/auth/google", {
-        method: "POST",
-        body: JSON.stringify({
-        token: googleData.tokenId
-      }),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    const data = await res.json()
-    console.log(data)
+  // const handleLogin = async googleData => {
+  //   const res = await fetch("/api/v1/auth/google", {
+  //       method: "POST",
+  //       body: JSON.stringify({
+  //       token: googleData.tokenId
+  //     }),
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //   const data = await res.json()
+  //   console.log(data)
 
 
-    // store returned user here
+  //   // store returned user here
 
     
-  }
+  // }
+
+
+    const handleLogin = (e) =>{
+      e.preventDefault()
+      console.log(emailId)
+      console.log(password)
+    }
 
 
 
@@ -37,7 +44,7 @@ const SignIn = () => {
     <div className="signup-Wrapper">
       <div className="signup">
         <h1>Sign In</h1>
-        <Form>
+        <Form onSubmit={e=>handleLogin(e)}>
           <FloatingLabel
             controlId="floatingInput"
             label="Email address"
@@ -45,18 +52,16 @@ const SignIn = () => {
           >
             <Form.Control
               type="email"
-              placeholder="name@example.com"
               onChange={(e) => setEmailId(e.target.value)}
-              required="true"
+              required={true}
             />
           </FloatingLabel>
 
           <FloatingLabel controlId="floatingPassword" label="Password">
             <Form.Control
               type="password"
-              placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
-              required="true"
+              required={true}
             />
           </FloatingLabel>
 
@@ -64,21 +69,19 @@ const SignIn = () => {
             className="signup-btn"
             variant="primary"
             type="submit"
-            onClick={() => {
-              //   Add Click Event Here
-            }}
+            
           >
             Sign In
           </Button>
         </Form>
 
-        <GoogleLogin
+        {/* <GoogleLogin
           clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
           buttonText="Sign in with Google"
           onSuccess={handleLogin}
           onFailure={handleLogin}
           cookiePolicy={"single_host_origin"}
-        />
+        /> */}
         <div>
           <small>
             Don't have an account? <Link to="/signup">Sign up</Link> here
