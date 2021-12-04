@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useHistory } from 'react-router-dom'; // version 5.2.0
 import { Button, Form, FloatingLabel,Row,Col } from "react-bootstrap";
 import {connect} from 'react-redux'
 import axios from 'axios';
@@ -13,11 +14,13 @@ const Adoption = ({emailId}) =>{
         weight: -1,
         age: 89,
         description: "",
-        email:'123@gmail.com',
+        email:emailId,
         time:""
     }
   
     const [obj, setObj] = useState(temp)
+    let history = useHistory ();
+
     //const [meeting, setMeeting] = useState("")
 
     const handleSubmit = async(e) =>{
@@ -30,6 +33,15 @@ const Adoption = ({emailId}) =>{
         const res =await axios.post(`http://localhost:4000/adoption`,obj,config)
         .then((e)=>{
           console.log(e)
+          console.log(e)
+          if(e.data==="correct"){
+            alert("Form Submitted Successfully")
+            history.push ("/main");
+
+          }
+          else{
+            alert("Please sbmit it again")
+          }
         }).catch((err)=>{
           console.log(err)
         })
@@ -157,7 +169,7 @@ const Adoption = ({emailId}) =>{
 }
 const mapStatesToProps = (state) =>{
   return {
-    userName: state.userReducer.username
+    emailId: state.userReducer.emailId
   }
 }
 export default connect(mapStatesToProps,null)(Adoption)

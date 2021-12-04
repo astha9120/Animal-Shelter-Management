@@ -17,8 +17,7 @@ const AdoptionForm = ({obj, setUser}) => {
         />
 
         <span className="bar-form-text">Adoption Form</span>
-
-        <div className="btn-signout-wrapper">
+        <span className="link-margin-left"><Link to='/main' className="link-signout link-colored"> Main</Link></span>
           <div className="btn-signout-wrapper">
             <Button
               variant="primary"
@@ -27,7 +26,6 @@ const AdoptionForm = ({obj, setUser}) => {
             >
               <Link className="link-signout" to='/'>Sign Out</Link>
             </Button>
-          </div>
         </div>
       </div>
 

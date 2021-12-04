@@ -1,6 +1,7 @@
 import React, {Fragment, useState} from "react";
 import axios from 'axios';
-import TextField from '@material-ui/core/TextField';
+import TextField from '@material-ui/core/TextField'
+import { Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 //import Swal from 'sweetalert2';
@@ -9,12 +10,15 @@ import Button from '@material-ui/core/Button';
 //import FormControlLabel from '@material-ui/core/FormControlLabel';
 //import {useHistory} from 'react-router-dom';
 import { Typography } from "@material-ui/core";
-import './postevent.css'
+//import './postevent.css'
 
-
-const useStyles = makeStyles((theme) => ({
-    
-}));
+const useStyles = makeStyles(Theme => ({
+    root: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  }));
 
 const Postpet = () =>{
 
@@ -53,7 +57,7 @@ const Postpet = () =>{
 
     return (
         <Fragment>
-            <h1 class="head_2">Pet Form</h1>
+            <h1>Pet Form</h1>
             <form className={classes.form} >
                 <div class="ip_2">
                   <TextField type="input"

@@ -18,12 +18,18 @@ const Searchbar = ({setUser, obj}) => {
         />
       </div>
       <Search />
+      <span className="link-margin-left">
+        <Link to='/adoptionform' className="link-signout link-colored"> Adoption </Link>
+        <Link to='/donationform' className="link-signout link-colored"> Donation </Link>
+        <Link to='/caretakerform' className="link-signout link-colored"> Care Taker </Link>
+      </span>
       <div className="btn-signout-wrapper">
         <Button
           variant="primary"
           className="btn-signout"
           onClick={() => {signOutHandle()}}
         >
+          
           <Link className="link-signout" to="/">
             Sign Out
           </Link>

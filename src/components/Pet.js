@@ -5,14 +5,26 @@ const Pet = ({
   weight,
   breed,
   color,
-  discription,
+  description,
   photo,
   type,
 }) => {
+
+  const arrayBufferToBase64 = (buffer)=> {
+    var binary = '';
+    var bytes = [].slice.call(new Uint8Array(buffer));
+    bytes.forEach((b) => binary += String.fromCharCode(b));
+    return window.btoa(binary);
+};
+
   return (
     <div className="pet-wrapper">
       <div className="pet-img-wrapper">
-        <img src={photo} className="pet-img" />
+      {/* <img src="data:image/<%=image.img.contentType%>;base64,
+                     <%=image.img.data.toString('base64')%>"/> */}
+        {/* <img src={photo} className="pet-img" /> */}
+
+        <img src={`data:image/png;base64,${arrayBufferToBase64(photo.data.data)}`}  className="pet-img"/>
       </div>
       <div className='details-wrapper'>
         <div className="place-center"><b>Name:&nbsp;</b> {name}</div>
@@ -33,7 +45,7 @@ const Pet = ({
         </div>
 
         <div className="place-center">
-            <b>Discription:</b>&nbsp; <div className="place-center">{discription}</div>
+            <b>Discription:</b>&nbsp; <div className="place-center">{description}</div>
         </div>
       </div>
     </div>

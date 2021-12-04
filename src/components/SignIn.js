@@ -2,11 +2,11 @@ import { Button, Form, FloatingLabel } from "react-bootstrap";
 import React from "react";
 import axios from 'axios';
 import HomeImg from "../Images/home-img.jpeg";
-
+import {connect} from 'react-redux'
 import { Link } from "react-router-dom";
-
+import {SET_STATE} from '../reducers/Actions/userActions'
 import { GoogleLogin } from "react-google-login";
-const SignIn = () => {
+const SignIn = ({setUser}) => {
   const [emailId, setEmailId] = React.useState();
 //   const [name, setName] = React.useState();
 //   const [userName, setUserName] = React.useState();
@@ -45,7 +45,13 @@ const SignIn = () => {
     console.log(emailId,password)
         const res =await axios.post(`http://localhost:4000/login/in/`,{email:emailId,password:password},config)
         .then((e)=>{
-          console.log(e)
+          console.log(e.data)
+          if(e.data==="correct"){
+            setUser({emailId, password})
+          }
+          else{
+            alert("Invalid Username/Password")
+          }
         }).catch((err)=>{
           console.log(err)
         })
@@ -97,7 +103,7 @@ const SignIn = () => {
         /> */}
         <div>
           <small>
-            Don't have an account? <Link to="/signup">Sign up</Link> here
+            Don't have an account? <Link to="/main">Sign In</Link> here
           </small>
         </div>
       </div>
@@ -109,4 +115,9 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+const mapDispatchToProps = (dispatch) =>{
+  return {
+    setUser: (responce) => dispatch({type: SET_STATE, payload: responce})
+  }
+}
+export default connect(null, mapDispatchToProps)(SignIn);

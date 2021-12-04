@@ -1,9 +1,29 @@
 import { connect } from "react-redux";
+import { useState, useEffect } from "react"
+import {SET_PETS} from '../reducers/Actions/petListActions'
 import Pet from "./Pet";
+import axios from 'axios';
 
-const Pets = ({ pets }) => {
 
-    console.log(pets)
+
+
+const Pets = ({ pets, setPetList }) => {
+
+    const handlereq = async()=>{
+      const config = { headers: { 'Content-Type': 'application/json' } }
+      const res =await axios.get(`http://localhost:4000/pet`,config)
+      .then((e)=>{
+        setPetList(e.data)
+      }).catch((err)=>{
+        console.log(err)
+      })
+    }
+
+    useEffect(()=>{
+          handlereq();
+          console.log("pets",pets)
+    }, [])
+    
   return (
     <div>
       {pets.map((pet) => {
@@ -18,4 +38,10 @@ const mapStateToProps = (state) => {
     pets: state.petListReducer,
   };
 };
-export default connect(mapStateToProps, null)(Pets);
+
+const mapDispatchToProps = (dispatch) =>{
+  return {
+    setPetList: (response) => dispatch({type: SET_PETS, payload: response})
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Pets);

@@ -17,9 +17,10 @@ const AdoptionForm = ({obj, setUser}) => {
         />
 
         <span className="bar-form-text">Donation Form</span>
-
+        <span className="link-margin-left"><Link to='/main' className="link-signout link-colored"> Main</Link></span>
         <div className="btn-signout-wrapper">
           <div className="btn-signout-wrapper">
+
             <Button
               variant="primary"
               className="btn-signout"
