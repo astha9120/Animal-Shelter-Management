@@ -1,7 +1,6 @@
 import React, {Fragment, useState} from "react";
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField'
-import { Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 //import Swal from 'sweetalert2';
@@ -12,12 +11,12 @@ import Button from '@material-ui/core/Button';
 import { Typography } from "@material-ui/core";
 //import './postevent.css'
 
-const useStyles = makeStyles(Theme => ({
+const useStyles = makeStyles(theme => ({
     root: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-    },
+    }
   }));
 
 const Postpet = () =>{

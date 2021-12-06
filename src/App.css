@@ -194,6 +194,7 @@
 }
 
 .slogan1-wrapper{
+  background-color: #145C9D;
   grid-template-columns: 20% 60% 20%;
   height: 100%;
 }
@@ -206,6 +207,7 @@
 }
 
 .slogan2{
+  
   color:#F4EEB1;
   font-weight: 700;
   font-size: x-large;

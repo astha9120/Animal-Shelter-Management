@@ -1,6 +1,7 @@
 import { Button, Form, FloatingLabel } from "react-bootstrap";
 import React from "react";
 import axios from 'axios';
+import { useHistory } from 'react-router-dom'; // version 5.2.0
 import HomeImg from "../Images/home-img.jpeg";
 import {connect} from 'react-redux'
 import { Link } from "react-router-dom";
@@ -11,6 +12,8 @@ const SignIn = ({setUser}) => {
 //   const [name, setName] = React.useState();
 //   const [userName, setUserName] = React.useState();
   const [password, setPassword] = React.useState();
+  let history = useHistory ();
+
 
 // To send request to backend for Login
   // const handleLogin = async googleData => {
@@ -45,9 +48,11 @@ const SignIn = ({setUser}) => {
     console.log(emailId,password)
         const res =await axios.post(`http://localhost:4000/login/in/`,{email:emailId,password:password},config)
         .then((e)=>{
-          console.log(e.data)
           if(e.data==="correct"){
             setUser({emailId, password})
+            console.log("signin",emailId)
+            history.push ("/main");
+
           }
           else{
             alert("Invalid Username/Password")
@@ -103,7 +108,7 @@ const SignIn = ({setUser}) => {
         /> */}
         <div>
           <small>
-            Don't have an account? <Link to="/main">Sign In</Link> here
+            Don't have an account? <Link to="/signup">Sign Up</Link> here
           </small>
         </div>
       </div>

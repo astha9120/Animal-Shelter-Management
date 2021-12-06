@@ -3,11 +3,9 @@ import { SET_PETS} from "./Actions/petListActions"
 
 
 
-
+var tempHolder = []
 
 const PetListReducer = (state=[], action) =>{
-
-    var tempHolder = []
     
     if(action.type === FILTER_PETS)
     {
@@ -23,8 +21,8 @@ const PetListReducer = (state=[], action) =>{
     }
     else if(action.type === SET_PETS)
     {
-
         tempHolder = action.payload
+        console.log("tempHolder")
         console.log(tempHolder)
         return action.payload
     }

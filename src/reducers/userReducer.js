@@ -1,18 +1,18 @@
 import { SET_STATE } from "./Actions/userActions";
 
 const initialState = {
-  name: "Jainit",
-  emailId: "123@gmail.com",
-  password: "asdfgh",
-  username: "kjkjakm",
-  phone: 865464654,
+  name: "",
+  emailId: "",
+  password: "",
+  username: "",
+  phone:0 ,
   address:{
-    line1: "jishf",
-    line2: "kuabd",
-    city: "ahmedabad",
-    state: "gujarat",
-    country: "india",
-    zip: 1355,
+    line1: "",
+    line2: "",
+    city: "",
+    state: "",
+    country: "",
+    zip: 0,
   }
 };
 

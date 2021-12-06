@@ -17,12 +17,6 @@ const Home = () => {
           <Link to="/signin" className="link-home">
             Sign In
           </Link>
-          <Link to="/" className="link-home">
-            Events
-          </Link>
-          <Link to="/" className="link-home">
-            Details
-          </Link>
         </div>
       </div>
       {/* pic 1 */}
@@ -60,31 +54,32 @@ const Home = () => {
         <div className="location">
           Lacation - vadodara
           <br />
-          xkadmqdkklw ld
+          opp. parsi Agyari, Sarod
+
           <br />
-          wofjfwdijfmdwkf
+          Sayajiganj, Vadodara
           <br />
-          wjfoijwlkwkfpwfkwlk
+           Gujarat 380052
         </div>
 
         <div className="location">
-          Lacation - vadodara
+          Lacation - Ahmedabad
           <br />
-          xkadmqdkklw ld
+          Asopalav mall 
           <br />
-          wofjfwdijfmdwkf
+          Naranpura Telephone exachnage
           <br />
-          wjfoijwlkwkfpwfkwlk
+          Naranpura - 380063
         </div>
 
         <div className="location">
-          Lacation - vadodara
+          Lacation - Surat
           <br />
-          xkadmqdkklw ld
+          Alpha one shelter
           <br />
-          wofjfwdijfmdwkf
+          Near ambavadi
           <br />
-          wjfoijwlkwkfpwfkwlk
+          Surat - 380019
         </div>
 
         <div className="location">

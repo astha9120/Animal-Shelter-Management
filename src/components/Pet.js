@@ -27,7 +27,7 @@ const Pet = ({
         <img src={`data:image/png;base64,${arrayBufferToBase64(photo.data.data)}`}  className="pet-img"/>
       </div>
       <div className='details-wrapper'>
-        <div className="place-center"><b>Name:&nbsp;</b> {name}</div>
+        <div className="place-center"><b>Type:&nbsp;</b> {type}</div>
 
         <div className="inner-grid">
             <div className="place-center">

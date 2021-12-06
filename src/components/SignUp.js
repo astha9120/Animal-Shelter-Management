@@ -5,6 +5,8 @@ import HomeImg from "../Images/home-img.jpeg";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux'
 import { GoogleLogin } from "react-google-login";
+import { useHistory } from 'react-router-dom'; // version 5.2.0
+
 // 997482154958-9ccbioqncmtp649r2qoq03a5e4g35so1.apps.googleusercontent.com <==> ClientID
 // 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 <==> CLient secret
 const SignUp = () => {
@@ -18,6 +20,8 @@ const SignUp = () => {
   const [line1, setLine1] = React.useState();
   const [line2, setLine2] = React.useState();
   const [city, setCity] = React.useState();
+  let history = useHistory ();
+
 
 
   const handleLogin = async(e) => {
@@ -27,6 +31,9 @@ const SignUp = () => {
         const res =await axios.post(`http://localhost:4000/login/up/`,{name:name,email:emailId,password:password,address:line1+line2+city+state+country+zip,contact:phone},config)
         .then((e)=>{
           console.log(e)
+          alert("successful signed up")
+          history.push ("/signin");
+
         }).catch((err)=>{
           console.log(err)
         })
