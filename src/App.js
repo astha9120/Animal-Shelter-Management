@@ -1,7 +1,6 @@
 
 import './App.css';
-import {Home, SignIn, SignUp, MainPage, AdoptionForm, DonationForm, CareTakerForm} from "./pages";
-//import Postpet from "./components/postpet"
+import {Home, SignIn, Events, SignUp, MainPage, AdoptionForm, DonationForm, CareTakerForm} from "./pages";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {connect} from 'react-redux'
@@ -49,6 +48,10 @@ function App({emailId}) {
           {emailId === "" ? <Home /> : <AdoptionForm />}
         </Route>
 
+        <Route exact path="/events">
+        <Events />
+        </Route>
+
         <Route exact path="/donationform">
           {emailId === "" ? <Home /> : <DonationForm />}
         </Route>
@@ -56,11 +59,6 @@ function App({emailId}) {
         <Route exact path="/caretakerform">
           {emailId === "" ? <Home /> : <CareTakerForm />}
         </Route>
-
-         
-        {/* <Route exact path="/uploadpet">
-          {emailId === "" ? <Home /> : <Postpet/>}
-        </Route> */}
 
         <Route exact path="*">
           {emailId === "" ? <Home /> : <MainPage />}

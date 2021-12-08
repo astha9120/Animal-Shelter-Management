@@ -17,6 +17,9 @@ const Home = () => {
           <Link to="/signin" className="link-home">
             Sign In
           </Link>
+          <Link to="/events" className="link-home">
+            Events
+          </Link>
         </div>
       </div>
       {/* pic 1 */}

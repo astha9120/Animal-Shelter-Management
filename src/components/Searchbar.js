@@ -22,6 +22,7 @@ const Searchbar = ({setUser, obj}) => {
         <Link to='/adoptionform' className="link-signout link-colored"> Adoption </Link>
         <Link to='/donationform' className="link-signout link-colored"> Donation </Link>
         <Link to='/caretakerform' className="link-signout link-colored"> Care Taker </Link>
+        <Link to='/events' className="link-signout link-colored"> Events</Link>
       </span>
       <div className="btn-signout-wrapper">
         <Button

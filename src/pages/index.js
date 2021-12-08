@@ -5,4 +5,5 @@ import MainPage from './MainPage'
 import AdoptionForm from './AdoptionForm'
 import DonationForm from './DonationForm'
 import CareTakerForm from './CareTakerForm'
-export {Home, SignIn, SignUp, MainPage, AdoptionForm, DonationForm, CareTakerForm}
+import Events from './Events'
+export {Home, SignIn, SignUp, MainPage, AdoptionForm, DonationForm, CareTakerForm,Events}
