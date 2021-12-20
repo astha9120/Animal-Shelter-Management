@@ -141,7 +141,7 @@ const SignUp = () => {
             <Col>
               <FloatingLabel
                 controlId="floatingInput"
-                label="City"
+                label="state"
                 className="mb-3"
               >
                 <Form.Control
